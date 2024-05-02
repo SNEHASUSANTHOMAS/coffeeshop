@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Details</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body bg-light text-dark">
+              <h2 class="card-title text-center mb-4">Order Placed</h2>
+              <div id="order-details"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let urlParams = new URLSearchParams(window.location.search);
+      let name = urlParams.get("name");
+      let drink = urlParams.get("drink");
+      let qty = urlParams.get("qty");
+      console.log(qty);
+      let orderDetailsContainer = document.getElementById("order-details");
+      orderDetailsContainer.innerHTML =
+        "<p>Name: " +
+        name +
+        "</p>" +
+        "<p>Drink: " +
+        drink +
+        "</p>" +
+        "<p>Quantity: " +
+        qty;
+    </script>
+  </body>
+</html>
